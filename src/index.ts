@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const fs = require("fs")
-const inquirer = require("inquirer")
-const { join, dirname } = require("path")
-const {echo, exec} = require("shelljs")
+import fs from "fs"
+import inquirer from "inquirer"
+import { join } from "path"
+import { echo, exec } from "shelljs"
 
 const runningPath = join(__dirname, "..")
 const version = exec('node --version', {silent:true})
 
-let root = __dirname
+let root = __dirname // join(__dirname, "..")
 if (runningPath.includes("node_modules")) {
     root = runningPath.slice(0, runningPath.indexOf("\\node_modules"))
 }
@@ -24,7 +24,6 @@ inquirer.prompt([
         name: "app-name"
     },
     {
-        name: "description",
         message: "Application description",
         name: "app-description"
     }
