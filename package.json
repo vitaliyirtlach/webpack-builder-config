@@ -1,10 +1,10 @@
 {
   "name": "webpack-builder-config",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Webpack Config Builder",
   "main": "dist/index.js",
   "bin": {
-    "build-config": "node dist/index.js"
+    "build-config": "dist/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts"
@@ -13,6 +13,13 @@
     "webpack",
     "webpack-builder"
   ],
+  "bugs": {
+    "url": "https://github.com/vitaliyirtlach/webpack-builder-config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitaliyirtlach/webpack-builder-config"
+  },
   "author": "vitaliyirtlach <vitaliyirtlach@gmail.com>",
   "license": "ISC",
   "devDependencies": {

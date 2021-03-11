@@ -33,28 +33,16 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                      modules: true,
-                      importLoaders: 1,
-                    },
-                  }, "css-loader"]
-            },
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+              },
             {
                 test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, {
-                    loader: 'css-loader',
-                    options: {
-                      modules: true,
-                      importLoaders: 1,
-                    },
-                  }, "sass-loader"]
+                use: [MiniCssExtractPlugin.loader, "sass-loader"]
             }
         ]  
     },
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
+        contentBase: join(__dirname, 'build'),
         compress: true,
         port: 3000,
       },
