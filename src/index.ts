@@ -3,13 +3,11 @@ import fs from "fs"
 import inquirer from "inquirer"
 import { join } from "path"
 import { echo, exec } from "shelljs"
-
-const runningPath = join(__dirname, "..")
+import {copySync} from "fs-extra"
 const version = exec('node --version', {silent:true})
-
-let root = __dirname // join(__dirname, "..")
-if (runningPath.includes("node_modules")) {
-    root = runningPath.slice(0, runningPath.indexOf("\\node_modules"))
+let root = join(__dirname, "..")
+if (root.includes("node_modules")) {
+    root = root.slice(0, root.indexOf("\\node_modules"))
 }
 inquirer.prompt([
     {
@@ -32,14 +30,13 @@ inquirer.prompt([
     const framework = answers["framework-config"].toLowerCase()
     const appName = answers["app-name"]
     const appDescription = answers["app-description"]
-    const packageJSON = JSON.parse(fs.readFileSync(join(__dirname, `packages/${framework}.package.json`), 'utf8'))
-    const webpackConfig = fs.readFileSync(join(__dirname, `configs/${framework}.webpack.config.js`), 'utf8')
+    const packageJSON = JSON.parse(fs.readFileSync(join(__dirname, "..", `projects/${framework}/package.json`), 'utf8'))
     packageJSON.name = appName
     packageJSON.description = appDescription
     
     fs.writeFileSync(join(root, "package.json"), JSON.stringify(packageJSON, null, "  "))
-    fs.writeFileSync(join(root, "webpack.config.js"), webpackConfig)
-    
+    copySync(join(__dirname, "..", "projects", framework), root)
     echo('Installing a dependencies')
     echo(`Node version: ${version}`)
+    exec(`cd "${root}" && npm install`)
 })

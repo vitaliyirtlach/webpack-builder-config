@@ -1,10 +1,10 @@
 {
   "name": "webpack-builder-config",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Webpack Config Builder",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "bin": {
-    "build-config": "ts-node src/index.ts"
+    "build-config": "node dist/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts"
@@ -16,9 +16,11 @@
   "author": "vitaliyirtlach <vitaliyirtlach@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/fs-extra": "^9.0.8",
     "@types/inquirer": "^7.3.1",
     "@types/node": "^14.14.33",
     "@types/shelljs": "^0.8.8",
+    "fs-extra": "^9.1.0",
     "inquirer": "^8.0.0",
     "shelljs": "^0.8.4",
     "ts-node": "^9.1.1",
@@ -26,6 +28,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "fs-extra": "^9.1.0",
     "inquirer": "^8.0.0",
     "shelljs": "^0.8.4",
     "ts-node": "^9.1.1"
