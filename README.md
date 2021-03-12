@@ -36,6 +36,7 @@
 ```bash
     npm start # browse a http://localhost:3000
     npm run build # build a production
+    tsc --init # if you choose a typescript configuration
 ```
 
 

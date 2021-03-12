@@ -9,6 +9,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin"
 export default {
     context: resolve(__dirname, "src"),
     entry: join(__dirname, "src", "index.tsx"),
+    mode:"development",
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
         alias: {
