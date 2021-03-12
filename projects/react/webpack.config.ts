@@ -29,36 +29,36 @@ export default {
                             "@babel/plugin-transform-runtime"
                         ]
                     },
-                    
                 }
             },
             {
-                test: /\.tsx?$/i, 
+                test: /\.tsx?$/i,
                 use: [
-                {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["@babel/preset-env", "@babel/preset-typescript", "@babel/preset-react"],
-                        plugins: ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-runtime", "babel-plugin-transform-async-to-generator"]
-                    },  
-                },"ts-loader"],
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: ["@babel/preset-env", "@babel/preset-typescript", "@babel/preset-react"],
+                            plugins: ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-runtime", "babel-plugin-transform-async-to-generator"]
+                        },
+                    }, "ts-loader"
+                ],
                 exclude: "/node_modules/"
             },
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
-              },
+            },
             {
                 test: /\.s[ac]ss$/i,
                 use: [MiniCssExtractPlugin.loader, "sass-loader"]
             }
-        ]  
+        ]
     },
     devServer: {
         contentBase: join(__dirname, 'build'),
         compress: true,
         port: 3000,
-      },
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
@@ -69,7 +69,7 @@ export default {
                 removeComments: true,
                 removeRedundantAttributes: true,
                 useShortDoctype: true
-              }
+            }
         }),
         new CopyWebpackPlugin({
             patterns: [{
@@ -86,10 +86,10 @@ export default {
         minimize: true,
         minimizer: [new TerserWebpackPlugin()]
     },
-    
+
     output: {
         filename: "[name].bundle.js",
         path: resolve(__dirname, "build"),
         publicPath: "/"
     }
-} as Configuration
+} as unknown as Configuration
