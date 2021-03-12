@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "webpack-builder-config",
   "version": "1.0.0",
   "description": "test-app",
   "scripts": {
@@ -41,7 +41,12 @@
      "typescript": "^4.2.3",
      "webpack": "^5.24.4",
      "webpack-cli": "^4.5.0",
-     "webpack-dev-server": "^3.11.0"
+     "webpack-dev-server": "^3.11.0",
+     "less": "^4.1.1",
+     "less-loader": "^8.0.0",
+     "stylus": "^0.54.8",
+     "stylus-loader": "^5.0.0",
+     "file-loader": "^6.2.0"
   },
   "dependencies": {
      "@types/react": "^16.9.56",

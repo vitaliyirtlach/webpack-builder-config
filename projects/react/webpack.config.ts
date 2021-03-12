@@ -51,7 +51,19 @@ export default {
             {
                 test: /\.s[ac]ss$/i,
                 use: [MiniCssExtractPlugin.loader, "sass-loader"]
-            }
+            },
+            {
+                test: /\.less$/i,
+                loader: "less-loader"
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+              },
         ]
     },
     devServer: {

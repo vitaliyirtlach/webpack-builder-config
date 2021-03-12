@@ -38,7 +38,23 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [MiniCssExtractPlugin.loader, "sass-loader"]
-            }
+            },
+            {
+                test: /\.less$/i,
+                loader: "less-loader"
+            },
+            {
+                test: /\.styl$/,
+                loader: "stylus-loader", // compiles Styl to CSS
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+              },
         ]  
     },
     devServer: {
