@@ -1,12 +1,11 @@
-import {Configuration} from "webpack"
-import { join, resolve } from "path"
-import HTMLWebpackPlugin from "html-webpack-plugin"
-import { CleanWebpackPlugin } from "clean-webpack-plugin"
-import TerserWebpackPlugin from "terser-webpack-plugin"
-import CopyWebpackPlugin from "copy-webpack-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
+const {join, resolve} = require("path")
+const HTMLWebpackPlugin = require("html-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const TerserWebpackPlugin = require("terser-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-export default {
+module.exports = {
     context: resolve(__dirname, "src"),
     entry: join(__dirname, "src", "index.tsx"),
     mode:"development",
@@ -62,9 +61,9 @@ export default {
                 use: [
                   {
                     loader: 'file-loader',
-                  },
-                ],
-              },
+                  }
+                ]
+            }
         ]
     },
     devServer: {
@@ -105,4 +104,4 @@ export default {
         path: resolve(__dirname, "build"),
         publicPath: "/"
     }
-} as unknown as Configuration
+}
