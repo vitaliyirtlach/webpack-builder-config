@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import chalk from "chalk"
 import inquirer from "inquirer"
 import { join } from "path"
 import { configurations } from "./configurations"
@@ -12,7 +13,7 @@ inquirer.prompt([
         type: "list",
         name: "framework-config",
         message: "What framework's configuration would you like to get?",
-        choices: ["React"]
+        choices: ["React", "Vue", "Angular"]
     }, 
     {
         type: "input",
@@ -22,27 +23,21 @@ inquirer.prompt([
     {
         message: "Application description",
         name: "app-description"
-    },
-    {
-        message: "What language do you prefer to use?",
-        type: "list",
-        name: "language",
-        choices: ["JavaScript", "TypeScript"]
     }
 ])
 .then((answers: any) => {
     const framework: string = answers["framework-config"].toLowerCase()
     const appName: string = answers["app-name"]
     const appDescription: string = answers["app-description"]
-    const language: string = answers["language"].toLowerCase()
     const configJSON = {
         appName,
         appDescription
     }
     if (framework in configurations) {
-        configurations[framework](language, ["css"], configJSON)
+        configurations[framework](configJSON)
+        .then(() => console.log(chalk.green("Install a dependencies!")))
+        .catch(() => console.log(chalk.red("Sorry we have an error :(! Post an issue!")))
     }
-    console.log("Install a dependencies!")
 })
 
 export {root}

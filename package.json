@@ -1,43 +1,46 @@
 {
-  "name": "webpack-builder-config",
-  "version": "1.0.12",
-  "description": "Webpack Config Builder",
-  "main": "dist/index.js",
-  "bin": {
-    "build-config": "dist/index.js"
-  },
-  "scripts": {
-    "start": "ts-node src/index.ts"
-  },
-  "keywords": [
-    "webpack",
-    "webpack-builder"
-  ],
-  "bugs": {
-    "url": "https://github.com/vitaliyirtlach/webpack-builder-config/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vitaliyirtlach/webpack-builder-config"
-  },
-  "author": "vitaliyirtlach <vitaliyirtlach@gmail.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/fs-extra": "^9.0.8",
-    "@types/inquirer": "^7.3.1",
-    "@types/node": "^14.14.33",
-    "@types/shelljs": "^0.8.8",
-    "fs-extra": "^9.1.0",
-    "inquirer": "^8.0.0",
-    "shelljs": "^0.8.4",
-    "ts-node": "^9.1.1",
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.3"
-  },
-  "dependencies": {
-    "fs-extra": "^9.1.0",
-    "inquirer": "^8.0.0",
-    "shelljs": "^0.8.4",
-    "ts-node": "^9.1.1"
-  }
+   "name": "webpack-builder-config",
+   "version": "1.0.13",
+   "description": "Webpack Config Builder",
+   "main": "dist/index.js",
+   "bin": {
+      "build-config": "dist/index.js"
+   },
+   "scripts": {
+      "start": "ts-node src/index.ts"
+   },
+   "keywords": [
+      "webpack",
+      "webpack-builder"
+   ],
+   "bugs": {
+      "url": "https://github.com/vitaliyirtlach/webpack-builder-config/issues"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/vitaliyirtlach/webpack-builder-config"
+   },
+   "author": "vitaliyirtlach <vitaliyirtlach@gmail.com>",
+   "license": "ISC",
+   "devDependencies": {
+      "@types/chalk": "^2.2.0",
+      "@types/fs-extra": "^9.0.8",
+      "@types/inquirer": "^7.3.1",
+      "@types/node": "^14.14.33",
+      "@types/shelljs": "^0.8.8",
+      "chalk": "^4.1.0",
+      "fs-extra": "^9.1.0",
+      "inquirer": "^8.0.0",
+      "shelljs": "^0.8.4",
+      "ts-node": "^9.1.1",
+      "ts-node-dev": "^1.1.6",
+      "typescript": "^4.2.3"
+   },
+   "dependencies": {
+      "fs-extra": "^9.1.0",
+      "inquirer": "^8.0.0",
+      "shelljs": "^0.8.4",
+      "ts-node": "^9.1.1",
+      "chalk": "^4.1.0"
+   }
 }
