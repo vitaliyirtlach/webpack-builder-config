@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "jsx": "react",
+      "allowJs": true,
+      "strict": true,
+      "rootDir": "./",
+      "outDir": "build",
+      "declaration": true,
+      "experimentalDecorators": true,
+      "noImplicitAny": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "module": "commonjs",
+      "target": "ES5"
+    }
+  }

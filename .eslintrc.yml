@@ -1,0 +1,10 @@
+extends: eslint:recommended
+rules:
+  indent: 
+    - "warn" 
+    - 4
+  quotes:
+    - "warn"
+    - "double"
+  
+  

@@ -44,6 +44,9 @@ inquirer.prompt([
         fs.writeFileSync(join(root, "package.json"), JSON.stringify(packageJSON, null, "   "))
         copySync(join(paths[framework], language), root)
         copySync(join(paths[framework], `public`), `${root}/public`)
+        if (language === "typescript") {
+            copySync(join(paths[framework], "tsconfig.json"), root)
+        }
         console.log(chalk.green("Install a dependencies: npm install!"))
     } catch(e) {
         console.log(chalk.red("Sorry we have an error :(! Post an issue!: " + e))
