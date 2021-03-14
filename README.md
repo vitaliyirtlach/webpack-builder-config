@@ -24,8 +24,8 @@ Webpack Builder Config can create webpack configuration for modern web framework
     npm install
 ```
 
-<div style="display: flex; align-items: center;">
-    <h3>React</h3>
+<div align="center">
+  <img width="300px" style="margin: 10px;" src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" />
 </div>
 
 <pre>
@@ -42,14 +42,43 @@ Webpack Builder Config can create webpack configuration for modern web framework
     webpack.config.js
 </pre>
 
+
+<div style="display: flex; align-items: center;">
+  <h3 style="margin-left: 10px;">TypeScript support</h3>
+</div>
+
+```bash
+    # create a tsconfig.json file
+    tsc --init
+```
+Add following code to your tsconfig.json
+<pre>
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowJs": true,
+    "strict": true,
+    "rootDir": "./",
+    "outDir": "build",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "ES5"
+  }
+}
+</pre>
 #### Run an application
 ```bash
     npm start # browse a http://localhost:3000
     npm run build # build a production
 ```
 
-<div style="display: flex; align-items: center;">
-  <h2 style="margin-left: 10px;">Vue</h2>
+<div align="center">
+  <img width="300px" style="margin: 10px;" src="https://www.fullstackpython.com/img/logos/vuejs-wide.png" />
 </div>
 <pre>
 /my-app
@@ -64,19 +93,52 @@ Webpack Builder Config can create webpack configuration for modern web framework
     webpack.config.js
 </pre>
 
+<div style="display: flex; align-items: center;">
+  <h3 style="margin-left: 10px;">TypeScript support</h3>
+</div>
+
+```bash
+    # create a tsconfig.json file
+    tsc --init
+```
+Add following code to your tsconfig.json
+<pre>
+{
+    "compilerOptions": {
+      "lib": [
+        "dom",
+        "es5",
+        "es2015",
+        "es2015.promise"
+      ],
+      "module": "esnext",
+      "moduleResolution": "node",
+      "target": "es5",
+      "sourceMap": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true
+    }
+}
+</pre>
+
 #### Run an application
 ```bash
     npm run serve # browse a http://localhost:8080
     npm run build # build a production
 ```
 
-<div style="display: flex; align-items: center;">
-  <h2 style="margin-left: 10px;">Svelte (soon)</h2>
+<div align="center">
+  <img width="400px" style="margin: 10px;" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*aPt-RYrtxhICvNCaBl37kw.png" />
 </div>
+<h3>⚠️No support at this time! Wait a little more</h3>
 
+<div align="center">
+  <img width="400px" style="margin: 10px;" src="https://cdn.worldvectorlogo.com/logos/angular-3.svg" />
+</div>
+<h3>⚠️No support at this time! Wait a little more</h3>
 
 ## Contributors
-
 <table>
   <tr>
     <td align="center">

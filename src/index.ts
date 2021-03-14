@@ -30,7 +30,7 @@ inquirer.prompt([
     }
 ])
 .then(async (answers: any) => {
-    const framework: "React" | "Vue" | "Angular" = answers["framework-config"]
+    const framework: "React" | "Vue" | "Svelte" = answers["framework-config"]
     const appName: string = answers["app-name"]
     const appDescription: string = answers["app-description"]
     try {

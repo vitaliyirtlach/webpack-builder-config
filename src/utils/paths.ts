@@ -4,7 +4,8 @@ const pathToTheProjectsFolder = join(__dirname, "..", "..", "projects")
 
 export const paths = {
     React: join(pathToTheProjectsFolder, "react"),
-    Angular: join(pathToTheProjectsFolder, "angular"),
-    Vue: join(pathToTheProjectsFolder, "vue")
+    Svelte: join(pathToTheProjectsFolder, "svelte"),
+    Vue: join(pathToTheProjectsFolder, "vue"),
+    Angular: join(pathToTheProjectsFolder, "angular")
 }
 

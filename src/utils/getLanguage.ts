@@ -2,10 +2,11 @@ import inquirer from "inquirer"
 
 const choisesForFramework = {
     "React": ["JavaScript", "TypeScript"],
-    "Angular": ["TypeScript"],
-    "Vue": ["JavaScript", "TypeScript"]
+    "Svelte": ["JavaScript", "TypeScript"],
+    "Vue": ["JavaScript", "TypeScript"],
+    "Angular": ["TypeScript"]
 }
-export const getLanguage = async (framework: "React" | "Vue" | "Angular"): Promise<string> => {
+export const getLanguage = async (framework: "React" | "Vue" | "Svelte"): Promise<string> => {
     return new Promise(async (resolve, reject) => {
         try {
             const {language} = await inquirer.prompt([{

@@ -15,7 +15,11 @@
    },
    "keywords": [
       "webpack",
-      "webpack-builder"
+      "webpack-builder",
+      "angular",
+      "react",
+      "svelte",
+      "typescript"
    ],
    "bugs": {
       "url": "https://github.com/vitaliyirtlach/webpack-builder-config/issues"
