@@ -2,7 +2,11 @@
 import chalk from "chalk"
 import inquirer from "inquirer"
 import { join } from "path"
-import { configurations } from "./configurations"
+import fs from "fs"
+import { getLanguage } from "./configurations/src/utils/getLanguage"
+import { copySync } from "fs-extra"
+import { paths } from "./configurations/paths"
+
 
 let root = join(__dirname, "..")
 if (root.includes("node_modules")) {
@@ -25,19 +29,24 @@ inquirer.prompt([
         name: "app-description"
     }
 ])
-.then((answers: any) => {
-    const framework: string = answers["framework-config"].toLowerCase()
+.then(async (answers: any) => {
+    const framework: "React" | "Vue" | "Angular" = answers["framework-config"]
     const appName: string = answers["app-name"]
     const appDescription: string = answers["app-description"]
-    const configJSON = {
-        appName,
-        appDescription
-    }
-    if (framework in configurations) {
-        configurations[framework](configJSON)
-        .then(() => console.log(chalk.green("Install a dependencies!")))
-        .catch(() => console.log(chalk.red("Sorry we have an error :(! Post an issue!")))
+    try {
+        const language = await getLanguage(framework)
+        const webpackFileName = `webpack.${language}.config.js`
+        const packageJSON = JSON.parse(fs.readFileSync(join(paths[framework], `${language}.package.json`), "utf-8"))
+        const webpackConfig = fs.readFileSync(join(paths[framework], webpackFileName), "utf-8")
+        packageJSON.name = appName
+        packageJSON.description = appDescription
+        
+        fs.writeFileSync(`${root}/webpack.config.js`, webpackConfig)
+        fs.writeFileSync(join(root, "package.json"), JSON.stringify(packageJSON, null, "   "))
+        copySync(join(paths[framework], language), root)
+        copySync(join(paths[framework], `public`), `${root}/public`)
+        console.log(chalk.green("Install a dependencies: npm install!"))
+    } catch(e) {
+        console.log(chalk.red("Sorry we have an error :(! Post an issue!: " + e))
     }
 })
-
-export {root}

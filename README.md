@@ -19,26 +19,65 @@
     npm install
 ```
 
-## Project structures
-### React
-    |-my-app
-    |--node_modules
-    |--public
-        |--index.html
-        |--assets
-    |--src
-        |--index.jsx
-        |--index.css
-        |--App.jsx
-    webpack.config.js
+<div style="display: flex; align-items: center;">
+    <h3>React</h3>
+</div>
 
+<pre>
+/my-app
+    /node_modules
+    /public
+        index.html
+        /assets
+            favicon.png
+    /src
+        index.jsx
+        index.css
+        App.jsx
+    webpack.config.js
+</pre>
+
+<div style="display: flex; align-items: center;">
+  <h3 style="margin-left: 10px;">TypeScript support</h3>
+</div>
+
+```bash
+    # create a tsconfig.json file
+    tsc --init
+```
+Add following code to your tsconfig.json
+<pre>
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowJs": true,
+    "strict": true,
+    "rootDir": "./",
+    "outDir": "build",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "ES5"
+  }
+}
+</pre>
 #### Run an application
 ```bash
     npm start # browse a http://localhost:3000
     npm run build # build a production
-    tsc --init # if you choose a typescript configuration
 ```
+<div style="display: flex; align-items: center;">
+  <h2 style="margin-left: 10px;">Vue (soon)</h2>
+</div>
 
+
+<div style="display: flex; align-items: center;">
+  <h2 style="margin-left: 10px;">Svelte (soon)</h2>
+</div>
 
 
 ## Our team 
