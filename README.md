@@ -5,8 +5,9 @@
 - <h4>React</h4>
 
 
+
 ## What can do this module?
-    Webpack Builder Config can create webpack configuration for modern web frameworks like React (soon: Vue, Angular, Svelte and other). 
+Webpack Builder Config can create webpack configuration for modern web frameworks like React (soon: Vue, Angular, Svelte and other). 
 ## Create an application
 ```bash 
     # nodejs basic setup

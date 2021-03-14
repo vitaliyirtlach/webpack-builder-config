@@ -3,9 +3,9 @@ import chalk from "chalk"
 import inquirer from "inquirer"
 import { join } from "path"
 import fs from "fs"
-import { getLanguage } from "./configurations/src/utils/getLanguage"
+import { getLanguage } from "./utils/getLanguage"
 import { copySync } from "fs-extra"
-import { paths } from "./configurations/paths"
+import { paths } from "./utils/paths"
 
 
 let root = join(__dirname, "..")
@@ -35,9 +35,8 @@ inquirer.prompt([
     const appDescription: string = answers["app-description"]
     try {
         const language = await getLanguage(framework)
-        const webpackFileName = `webpack.${language}.config.js`
         const packageJSON = JSON.parse(fs.readFileSync(join(paths[framework], `${language}.package.json`), "utf-8"))
-        const webpackConfig = fs.readFileSync(join(paths[framework], webpackFileName), "utf-8")
+        const webpackConfig = fs.readFileSync(join(paths[framework], `webpack.${language}.config.js`), "utf-8")
         packageJSON.name = appName
         packageJSON.description = appDescription
         

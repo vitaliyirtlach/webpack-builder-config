@@ -1,6 +1,6 @@
 {
    "name": "webpack-builder-config",
-   "version": "1.0.13",
+   "version": "1.0.15",
    "description": "Webpack Config Builder",
    "main": "dist/index.js",
    "bin": {
