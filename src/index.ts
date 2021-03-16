@@ -17,7 +17,7 @@ inquirer.prompt([
         type: "list",
         name: "framework-config",
         message: "What framework's configuration would you like to get?",
-        choices: ["React", "Vue", "Angular"]
+        choices: ["React", "Vue", "Svelte"]
     }, 
     {
         type: "input",
@@ -35,6 +35,11 @@ inquirer.prompt([
     const appDescription: string = answers["app-description"]
     try {
         const language = await getLanguage(framework)
+        if (language === "typescript") {
+            const tsconfig = fs.readFileSync(join(paths[framework], "tsconfig.json"), "utf-8")
+            fs.writeFileSync(`${root}/tsconfig.json`, tsconfig)
+            // copySync(join(paths[framework], "tsconfig.json"), root)
+        }
         const packageJSON = JSON.parse(fs.readFileSync(join(paths[framework], `${language}.package.json`), "utf-8"))
         const webpackConfig = fs.readFileSync(join(paths[framework], `webpack.${language}.config.js`), "utf-8")
         packageJSON.name = appName
@@ -44,9 +49,6 @@ inquirer.prompt([
         fs.writeFileSync(join(root, "package.json"), JSON.stringify(packageJSON, null, "   "))
         copySync(join(paths[framework], language), root)
         copySync(join(paths[framework], `public`), `${root}/public`)
-        if (language === "typescript") {
-            copySync(join(paths[framework], "tsconfig.json"), root)
-        }
         console.log(chalk.green("Install a dependencies: npm install!"))
     } catch(e) {
         console.log(chalk.red("Sorry we have an error :(! Post an issue!: " + e))

@@ -3,8 +3,7 @@ import inquirer from "inquirer"
 const choisesForFramework = {
     "React": ["JavaScript", "TypeScript"],
     "Svelte": ["JavaScript", "TypeScript"],
-    "Vue": ["JavaScript", "TypeScript"],
-    "Angular": ["TypeScript"]
+    "Vue": ["JavaScript", "TypeScript"]
 }
 export const getLanguage = async (framework: "React" | "Vue" | "Svelte"): Promise<string> => {
     return new Promise(async (resolve, reject) => {

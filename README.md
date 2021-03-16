@@ -28,6 +28,8 @@ Webpack Builder Config can create webpack configuration for modern web framework
   <img width="300px" style="margin: 10px;" src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" />
 </div>
 
+
+<h4> The module will create for you the following structure of your project</h4>
 <pre>
 /my-app
     /node_modules
@@ -47,11 +49,7 @@ Webpack Builder Config can create webpack configuration for modern web framework
   <h3 style="margin-left: 10px;">TypeScript support</h3>
 </div>
 
-```bash
-    # create a tsconfig.json file
-    tsc --init
-```
-Add following code to your tsconfig.json
+#### Your tsconfig.json should has following configuration
 <pre>
 {
   "compilerOptions": {
@@ -80,6 +78,8 @@ Add following code to your tsconfig.json
 <div align="center">
   <img width="300px" style="margin: 10px;" src="https://www.fullstackpython.com/img/logos/vuejs-wide.png" />
 </div>
+<h4> The module will create for you the following structure of your project</h4>
+
 <pre>
 /my-app
     /node_modules
@@ -97,11 +97,7 @@ Add following code to your tsconfig.json
   <h3 style="margin-left: 10px;">TypeScript support</h3>
 </div>
 
-```bash
-    # create a tsconfig.json file
-    tsc --init
-```
-Add following code to your tsconfig.json
+#### Your tsconfig.json should has following configuration
 <pre>
 {
     "compilerOptions": {
@@ -131,13 +127,30 @@ Add following code to your tsconfig.json
 <div align="center">
   <img width="400px" style="margin: 10px;" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*aPt-RYrtxhICvNCaBl37kw.png" />
 </div>
-<h3>⚠️No support at this time! Wait a little more</h3>
 
-<div align="center">
-  <img width="400px" style="margin: 10px;" src="https://cdn.worldvectorlogo.com/logos/angular-3.svg" />
-</div>
-<h3>⚠️No support at this time! Wait a little more</h3>
+<h4> The module will create for you the following structure of your project</h4>
+<pre>
+  /root
+    /public
+      /assets
+      favicon.png
+    /src
+      main.js
+      App.svelte
+      global.css
+  webpack.config.js
+</pre>
 
+#### Your tsconfig.json should has following configuration
+<pre>
+{
+    "extends": "@tsconfig/svelte/tsconfig.json",
+    "include": ["src/**/*"],
+    "exclude": ["node_modules/*", "build/*"]
+}
+</pre>
+
+<!-- <h3>⚠️No support at this time! Wait a little more</h3> -->
 ## Contributors
 <table>
   <tr>
@@ -149,7 +162,5 @@ Add following code to your tsconfig.json
       <img src="https://sun9-48.userapi.com/impf/F3M2uK8mZbXYP2LiJYuofhMY4Dc_eFfbeQgV0A/-AQH1-OdFH4.jpg?size=377x436&quality=96&proxy=1&sign=75488ae3b1ce2bda4c4c51cbe9eb21f5&c_uniq_tag=F7XcZe8j4Q1uGF4vBqTtziNM4cRJe7ysXrGh66xUPl0&type=album" width="100px;" height="100px;"/><br /><sub><b>Kirill Irtlach</b></sub>
       <br />📖 	
     </td>
-    
-    
   </tr>
 </table>
