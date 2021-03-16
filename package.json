@@ -41,6 +41,7 @@
       "eslint": "^7.22.0",
       "fs-extra": "^9.1.0",
       "inquirer": "^8.0.0",
+      "jest": "^26.6.3",
       "prettier": "2.2.1",
       "shelljs": "^0.8.4",
       "ts-jest": "^26.5.3",
@@ -60,10 +61,11 @@
       "preset": "ts-jest",
       "testEnvironment": "node",
       "transform": {
-        "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+         "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
       },
       "transformIgnorePatterns": [
-        "node_modules/(?!variables/.*)"
+         "node_modules/(?!variables/.*)",
+         "^.+\\.js$"
       ]
-    }
+   }
 }
