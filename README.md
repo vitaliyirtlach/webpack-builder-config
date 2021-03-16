@@ -150,6 +150,12 @@ Webpack Builder Config can create webpack configuration for modern web framework
 }
 </pre>
 
+#### Run an application
+```bash
+    npm run dev # browse a http://localhost:5000
+    npm run build # build a production
+```
+
 <!-- <h3>⚠️No support at this time! Wait a little more</h3> -->
 ## Contributors
 <table>
