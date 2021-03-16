@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs: 
+  test: 
+    docker:  
+      - image: node:11.10.1
+    working_directory: ~/app
+    steps: 
+      - checkout
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package-lock.json checksum
+            # when this file is changed, this key will fail
+            - v1-npm-deps-{{ checksum "package.json" }}
+            # Find the most recently generated cache used from any branch
+            - v1-npm-deps-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-npm-deps-{{ checksum "package.json" }}
+      - run: npm run test
+workflows:
+  version: 2
+  test: 
+    jobs: 
+      - test
