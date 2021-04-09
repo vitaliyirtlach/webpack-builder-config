@@ -8,7 +8,7 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "pretty": "prettier",
+      "pretty": "prettier src/",
       "lint": "eslint ",
       "build": "tsc",
       "prepublish": "npm run build",
