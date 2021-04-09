@@ -8,6 +8,7 @@
 ## Supporting frameworks 
 - <h4>React</h4>
 - <h4>Vue</h4>
+- <h4>Svelte</h4>
 
 
 ## What can do this module?
