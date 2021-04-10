@@ -1,17 +1,8 @@
 import inquirer from "inquirer"
 import { Configuration } from "../types/Configuration"
-import { ConfigurationLanguage } from "../types/ConfigurationLanguage"
+import { configurationLanguage } from "./ConfigurationLanguage"
 
-const configurationLanguage: ConfigurationLanguage = {
-    "React": ["JavaScript", "TypeScript"],
-    "Svelte": ["JavaScript", "TypeScript"],
-    "Vue": ["JavaScript", "TypeScript"],
-    "MoonJS": ["JavaScript"],
-    "InfernoJS": ["JavaScript"],
-    "PolymerJS": ["JavaScript"],
-    "RiotJS": ["JavaScript"],
-    "Basic": ["JavaScript", "TypeScript"]
-}
+
 export const getLanguage = async (configuration: Configuration): Promise<string> => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -23,7 +14,7 @@ export const getLanguage = async (configuration: Configuration): Promise<string>
             }])
             resolve(language.toLowerCase())
         } catch(e) {
-            reject("Error")
+            reject(e)
         }
     })
 }

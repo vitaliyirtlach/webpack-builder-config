@@ -8,7 +8,6 @@ export const paths: Paths = {
     Svelte: join(pathToTheProjectsFolder, "svelte"),
     Vue: join(pathToTheProjectsFolder, "vue"),
     Basic: join(pathToTheProjectsFolder, "basic"),
-    MoonJS: join(pathToTheProjectsFolder, "moonjs"),
     InfernoJS: join(pathToTheProjectsFolder, "infernojs"),
     RiotJS: join(pathToTheProjectsFolder, "riotjs"),
     PolymerJS: join(pathToTheProjectsFolder, "polymerjs")

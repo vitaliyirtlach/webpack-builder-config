@@ -3,7 +3,6 @@ export type Configuration =
     "React"       | 
     "Vue"         | 
     "Svelte"      | 
-    "MoonJS"      | 
     "RiotJS"      | 
     "PolymerJS"   | 
     "InfernoJS"

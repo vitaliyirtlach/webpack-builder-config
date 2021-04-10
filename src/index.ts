@@ -19,14 +19,13 @@ inquirer.prompt([
         name: "framework-config",
         message: "What framework's configuration would you like to get?",
         choices: [
-            chalk.white("Basic"),
-            chalk.blue("React"), 
-            chalk.green("Vue"), 
-            chalk.red("Svelte"),
-            // chalk.magenta("MoonJS"),
-            // chalk.redBright("InfernoJS"),
-            // chalk.cyan("PolymerJS"),
-            // chalk.redBright("RiotJS"),
+         "Basic",
+         "React",
+         "Vue",
+         "Svelte",
+         "RiotJS",
+        // "PolymerJS",
+        // "InfernoJS",
         ]
     }, 
     {
@@ -41,6 +40,7 @@ inquirer.prompt([
 ])
 .then(async (answers: any) => {
     const framework: Configuration = answers["framework-config"]
+    
     const appName: string = answers["app-name"]
     const appDescription: string = answers["app-description"]
     try {
@@ -60,6 +60,7 @@ inquirer.prompt([
         copySync(join(paths[framework], `public`), `${root}/public`)
         console.log(chalk.green("Installing a dependencies!"))
     } catch(e) {
+        console.log(e)
         console.log(chalk.red("Sorry we have an error :(! Post an issue!: " + e))
     }
 })

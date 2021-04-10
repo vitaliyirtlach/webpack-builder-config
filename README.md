@@ -5,7 +5,8 @@
 <h1 align="center">📦 Webpack Builder Config </h1>
 
 ##### Post an issue if you have a problem with package
-## Supporting frameworks 
+## Supporting frameworks
+- <h4>Basic setup</h4> 
 - <h4>React</h4>
 - <h4>Vue</h4>
 - <h4>Svelte</h4>
