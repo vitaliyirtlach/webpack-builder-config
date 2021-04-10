@@ -13,6 +13,6 @@
     "node_modules",
     "dist",
     "projects",
-    "__tests__"
+    "src/__tests__"
   ]
 }

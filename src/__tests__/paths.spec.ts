@@ -1,4 +1,4 @@
-import { paths } from "../utils/paths"
+import { paths } from "../shared/utils/paths"
 
 describe("Paths", () => {
     test("paths should have a React", () => {

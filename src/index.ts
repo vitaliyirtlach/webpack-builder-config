@@ -4,10 +4,11 @@ import chalk from "chalk"
 import inquirer from "inquirer"
 import { join } from "path"
 import fs from "fs"
-import { getLanguage } from "./utils/getLanguage"
+import { getLanguage } from "./shared/utils/getLanguage"
 import { copySync } from "fs-extra"
-import { paths } from "./utils/paths"
+import { paths } from "./shared/utils/paths"
 import { exec, cd } from "shelljs"
+import { Configuration } from "./shared/types/Configuration"
 
 let root = join(__dirname, "..")
 if (root.includes("node_modules")) {
@@ -20,7 +21,7 @@ inquirer.prompt([
         name: "framework-config",
         message: "What framework's configuration would you like to get?",
         choices: [
-            // chalk.white("Basic project"),
+            chalk.white("Basic"),
             chalk.blue("React"), 
             chalk.green("Vue"), 
             chalk.red("Svelte"),
@@ -41,7 +42,7 @@ inquirer.prompt([
     }
 ])
 .then(async (answers: any) => {
-    const framework: "React" | "Vue" | "Svelte" = answers["framework-config"]
+    const framework: Configuration = answers["framework-config"]
     const appName: string = answers["app-name"]
     const appDescription: string = answers["app-description"]
     try {

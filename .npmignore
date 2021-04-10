@@ -1,5 +1,7 @@
 .git
 .vscode
 .idea
-src/__tests__
+src
 .circleci
+.husky
+__tests__

@@ -2,17 +2,18 @@
     <img src="https://raw.githubusercontent.com/webpack/media/master/logo/logo-on-white-bg.png"/>
 </div>
 
-<h1 align="center">📦 Webpack Builder Config for web frameworks</h1>
+<h1 align="center">📦 Webpack Builder Config </h1>
 
-⚠️ This module in development mode (if you have bug you can post a issue)
+##### Post an issue if you have a problem with package
 ## Supporting frameworks 
 - <h4>React</h4>
 - <h4>Vue</h4>
 - <h4>Svelte</h4>
 
-
 ## What can do this module?
-Webpack Builder Config can create webpack configuration for modern web frameworks like React, Vue (soon: other). 
+Webpack Builder Config can create webpack configuration for modern web technologies
+
+
 ## Create an application
 ```bash 
     # nodejs basic setup
