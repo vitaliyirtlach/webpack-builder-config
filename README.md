@@ -18,12 +18,10 @@ Webpack Builder Config can create webpack configuration for modern web technolog
 
 ## Create an application
 ```bash 
-    # nodejs basic setup
-    npm init -y 
-    # install this module
-    npm install webpack-builder-config
+    # install package
+    npm install -g webpack-builder-config
     # run a module
-    npx build-config
+    npx build-config # in your project directory
     # install dependencies
     npm install
 ```
