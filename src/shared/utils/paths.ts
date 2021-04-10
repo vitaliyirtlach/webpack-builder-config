@@ -1,7 +1,7 @@
 import { join } from "path"
 import { Paths } from "../types/Paths"
 
-const pathToTheProjectsFolder = join(__dirname, "..", "..", "projects")
+const pathToTheProjectsFolder = join(__dirname, "..", "..", "..", "projects")
 
 export const paths: Paths = {
     React: join(pathToTheProjectsFolder, "react"),
