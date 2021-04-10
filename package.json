@@ -1,6 +1,6 @@
 {
    "name": "webpack-builder-config",
-   "version": "1.0.19",
+   "version": "1.0.23",
    "description": "Webpack Config Builder",
    "main": "dist/index.js",
    "bin": {
@@ -13,7 +13,8 @@
       "build": "tsc",
       "prepublish": "npm run build",
       "test": "jest",
-      "prepare": "husky install"
+      "prepare": "husky install",
+      "prepublishOnly": "npm run build"
    },
    "keywords": [
       "webpack",

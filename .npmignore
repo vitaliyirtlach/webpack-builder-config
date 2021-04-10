@@ -1,7 +1,6 @@
 .git
 .vscode
 .idea
-src
 .circleci
 .husky
 __tests__
@@ -10,3 +9,4 @@ __tests__
 .gitignore
 .prettierignore
 .prettierrc.yml
+./src
