@@ -10,10 +10,8 @@ import { paths } from "./shared/utils/paths"
 import { exec, cd } from "shelljs"
 import { Configuration } from "./shared/types/Configuration"
 
-let root = join(__dirname, "..")
-if (root.includes("node_modules")) {
-    root = root.slice(0, root.indexOf("\\node_modules"))
-}
+
+const root = process.cwd()
 
 inquirer.prompt([
     {
