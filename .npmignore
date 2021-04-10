@@ -5,3 +5,8 @@ src
 .circleci
 .husky
 __tests__
+.eslintignore
+.eslintrc.yml
+.gitignore
+.prettierignore
+.prettierrc.yml

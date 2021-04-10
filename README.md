@@ -4,12 +4,13 @@
 
 <h1 align="center">📦 Webpack Builder Config </h1>
 
-##### Post an issue if you have a problem with package
+⚠️ This package in development mode (if you have bug you can post an issue)
 ## Supporting frameworks
 - <h4>Basic setup</h4> 
 - <h4>React</h4>
 - <h4>Vue</h4>
 - <h4>Svelte</h4>
+- <h4>RiotJS</h4>
 
 ## What can do this module?
 Webpack Builder Config can create webpack configuration for modern web technologies
@@ -26,6 +27,31 @@ Webpack Builder Config can create webpack configuration for modern web technolog
     # install dependencies
     npm install
 ```
+
+
+<div align="center">
+  <img width="400px" style="margin: 10px;" src="https://images.squarespace-cdn.com/content/v1/56b8dfcf62cd94ec072ddb33/1547134228418-XO27PTIE8BYNJCK3K7LS/ke17ZwdGBToddI8pDm48kFVU9EQtVoAgxzyGrV7amflZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVF6Xsrf4MJiJM3V1S6xAxUJDZYeeoUHj0VjB7yGqI0-aWbSd6kfRtgWHgNMDgGnmDY/htlm+css+and+js+logo.png" />
+</div>
+
+<h4> The module will create for you the following structure of your project</h4>
+<pre>
+  /root
+    /public
+      /assets
+      index.html
+    /src
+      main.js
+      app.riot
+  webpack.config.js
+</pre>
+
+#### Run an application
+```bash
+    npm start # browse a http://localhost:3000
+    npm run build # build a production
+```
+
+
 
 <div align="center">
   <img width="300px" style="margin: 10px;" src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" />
@@ -136,7 +162,7 @@ Webpack Builder Config can create webpack configuration for modern web technolog
   /root
     /public
       /assets
-      favicon.png
+      index.html
     /src
       main.js
       App.svelte
@@ -158,6 +184,30 @@ Webpack Builder Config can create webpack configuration for modern web technolog
     npm run dev # browse a http://localhost:5000
     npm run build # build a production
 ```
+
+
+<div align="center">
+  <img width="400px" style="margin: 10px;" src="https://riot.js.org/img/logo/riot-logo.svg" />
+</div>
+
+<h4> The module will create for you the following structure of your project</h4>
+<pre>
+  /root
+    /public
+      /assets
+      index.html
+    /src
+      main.js
+      app.riot
+  webpack.config.js
+</pre>
+
+#### Run an application
+```bash
+    npm start # browse a http://localhost:3000
+    npm run build # build a production
+```
+
 
 <!-- <h3>⚠️No support at this time! Wait a little more</h3> -->
 ## Contributors
