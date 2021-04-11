@@ -7,7 +7,7 @@ import fs from "fs"
 import { getLanguage } from "./shared/utils/getLanguage"
 import { copySync } from "fs-extra"
 import { paths } from "./shared/utils/paths"
-import { exec, cd } from "shelljs"
+import { exec, cd, echo } from "shelljs"
 import { Configuration } from "./shared/types/Configuration"
 
 
@@ -58,7 +58,9 @@ inquirer.prompt([
         fs.writeFileSync(join(root, "package.json"), JSON.stringify(packageJSON, null, "   "))
         copySync(join(paths[framework], language), root)
         copySync(join(paths[framework], `public`), `${root}/public`)
-        console.log(chalk.green("Installing a dependencies!"))
+        console.log(chalk.green("Installing a dependencies! Wait please ;)"))
+        cd(root).exec("npm install")
+        console.log(chalk.cyan("Run application!"))
     } catch(e) {
         console.log(e)
         console.log(chalk.red("Sorry we have an error :(! Post an issue!: " + e))
